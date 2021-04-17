@@ -82,7 +82,7 @@ body {
 	margin: 0;
 	width: 100%;
 	font-size: 20px;
-	font-family: inherit;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: inherit;
 	line-height: 1.4em;
 	color: inherit;
@@ -133,6 +133,11 @@ body {
 	font-size: 20px;
 	color: #d80000;
 	padding: 10px 27px 10px 27px;
+	
+}
+
+.toggle-all +label:hover {
+	cursor: pointer;
 }
 
 .toggle-all:checked + label:before {
@@ -146,14 +151,15 @@ body {
 }
 
 .task-list li:hover {
-	background-color: #e2deded0 ;
+	background-color: #ececece1 ;
 }
 
 .task-list li {
 	position: relative;
-	font-size: 20px;
+	font-size: 18px;
 	border-bottom: 1px solid #ededed;
 	background-color: #fafafa ;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .task-list li:last-child {
@@ -194,6 +200,11 @@ body {
 	opacity: 0;
 }
 
+.task-list li .toggle:hover{
+	cursor: pointer;
+
+}
+
 .task-list li .toggle + label {
 	/*
 		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
@@ -202,6 +213,7 @@ body {
 	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
 	background-repeat: no-repeat;
 	background-position: center left;
+	
 }
 
 .task-list li .toggle:checked + label {
@@ -314,6 +326,7 @@ body {
 	height: 23px; 
 	text-align: center;
 	font-size: 15px;
+	font-family: 'Pacifico', cursive;
 	border-top: 1px solid #e6e6e6;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }

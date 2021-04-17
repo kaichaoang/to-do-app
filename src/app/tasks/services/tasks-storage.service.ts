@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import {select, Store} from '@ngrx/store';
 import {filter} from 'rxjs/operators';
 
-import { TasksState } from '../../models/app-state.model';
-import { tasksFeatureSelector } from '../../selectors/tasks.selectors';
-import * as TaskActions from '../../actions/tasks.actions';
+import { TasksState } from '../models/app-state.model';
+import { tasksFeatureSelector } from '../selectors/tasks.selectors';
+import * as TaskActions from '../actions/tasks.actions';
 
 export const TASKS_LOCAL_STORAGE_KEY = 'task-key';
 
@@ -53,6 +53,7 @@ export class TasksStorageService {
         return true;
       }
 
+      //prevent error from empty storage
       if(!isEmpty(taskEntities)) {
           this.store.dispatch(TaskActions.loadTasks({
               tasks: JSON.parse(JSON.stringify(Object.values(taskEntities)))

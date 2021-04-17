@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 import { Store } from "@ngrx/store";
 import { TasksState } from "../../models/app-state.model";
 import { Update } from '@ngrx/entity';
-import { TasksStorageService } from '../services/tasks-storage.service';
+import { TasksStorageService } from '../../services/tasks-storage.service';
 
 import * as taskSelector from '../../selectors/tasks.selectors';
 import * as TaskActions from '../../actions/tasks.actions';

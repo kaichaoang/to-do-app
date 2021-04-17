@@ -6,7 +6,7 @@ import { MainComponent } from './components/main/main.component';
 import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TasksStorageService } from './components/services/tasks-storage.service';
+import { TasksStorageService } from './services/tasks-storage.service';
 import { StoreModule } from '@ngrx/store';
 import { TaskReducer } from './reducers/tasks.reducer';
 import { FormsModule } from '@angular/forms';
