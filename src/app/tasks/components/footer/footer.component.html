@@ -1,0 +1,6 @@
+<footer class="footer" [ngClass]="{hidden: noTasksClass$ | async}">
+    <span class="task-count">
+        <strong>{{ activeCount$ | async }}</strong>
+        {{ itemsLeftText$ | async }}
+    </span>
+</footer>

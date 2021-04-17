@@ -1,0 +1,18 @@
+<li [ngClass]="{ editing: isEditingProps }">
+    <div class="view">
+        <input class="toggle" type="checkbox" [checked]="taskProps.isCompleted" 
+        (change)="toggleCompletion()"/>
+        <label (dblclick)="setTaskInEditMode()">{{ taskProps.text }}</label>
+        <button class="destroy" (click)="removeTask()"></button>
+    </div>
+    <!-- only open this during editting mode -->
+    <ng-container *ngIf="isEditingProps">
+        <input class="edit"
+         #textInput
+         [value]="editingText"
+         (keyup)="editText($event)"
+         (keyup.enter)="editTask()"/>
+    </ng-container>
+
+</li>
+

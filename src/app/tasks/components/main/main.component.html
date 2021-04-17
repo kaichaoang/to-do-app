@@ -1,0 +1,22 @@
+
+<!-- hides the footer label if no tasks -->
+
+
+<section class="main">
+    <input id="toggle-all" class="toggle-all" type="checkbox"
+     [checked]="isAllTasksSelected$ | async"
+     (change)="checkAllTasks($event)"
+     />
+
+    <label for="toggle-all">Mark all as completed</label>
+
+    <ul class="task-list">
+        <app-tasks-task 
+        *ngFor="let task of visibleTasks | async"
+        [task]="task"
+        [isEditing]="editingId === task.id"
+        (setEditingId)="setEditingId($event)">
+        {{ task.text }}
+        </app-tasks-task>
+    </ul>
+</section>
