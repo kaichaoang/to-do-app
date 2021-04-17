@@ -1,7 +1,10 @@
 <header class="header">
-    <h1>To Do List</h1>
-    <input class="new-task" placeholder="What needs to be done?"
-     autofocus [(ngModel)]="this.newTaskDescription"
-     (keyup.enter) = "addTask()">
-
-</header>
+    <h1 class="mat-display-3">to do!</h1>
+    <input
+        class="new-task"
+        placeholder="What needs to be done?"
+        autoFocus
+        [(ngModel)]="this.newTaskDescription"
+        (keyup.enter)="addTask()"
+    />
+    </header>

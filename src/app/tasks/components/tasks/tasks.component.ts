@@ -6,6 +6,5 @@ import { Component } from "@angular/core";
 
 })
 
-export class TasksComponent {
-
-}
+//Component for the entire task app
+export class TasksComponent {}

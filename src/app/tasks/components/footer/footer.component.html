@@ -3,4 +3,10 @@
         <strong>{{ activeCount$ | async }}</strong>
         {{ itemsLeftText$ | async }}
     </span>
+
+    
+    <span>
+        <button mat-raised-button color="warn" class="clear-all-button"
+         (click)="clearAllTasks()">Clear All</button>        
+    </span>
 </footer>

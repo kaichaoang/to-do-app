@@ -1,12 +1,7 @@
-
-<!-- hides the footer label if no tasks -->
-
-
 <section class="main">
     <input id="toggle-all" class="toggle-all" type="checkbox"
      [checked]="isAllTasksSelected$ | async"
-     (change)="checkAllTasks($event)"
-     />
+     (change)="checkAllTasks($event)"/>
 
     <label for="toggle-all">Mark all as completed</label>
 

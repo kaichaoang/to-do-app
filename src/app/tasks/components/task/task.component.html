@@ -1,10 +1,36 @@
-<li [ngClass]="{ editing: isEditingProps }">
+<li class="task" [ngClass]="{ editing: isEditingProps }">
     <div class="view">
-        <input class="toggle" type="checkbox" [checked]="taskProps.isCompleted" 
-        (change)="toggleCompletion()"/>
-        <label (dblclick)="setTaskInEditMode()">{{ taskProps.text }}</label>
-        <button class="destroy" (click)="removeTask()"></button>
+      <input
+        class="toggle"
+        type="checkbox"
+        [checked]="taskProps.isCompleted"
+        (change)="toggleCompletion()"
+      />
+
+      <label>
+        <img *ngIf="!(taskProps.image_url == '')" class="task-image" src={{taskProps.image_url}} alt="No image"/>
+        <td [ngClass]="taskProps.isCompleted ? 'strikethrough': 'null' ">{{ taskProps.text }}</td>
+      </label>
+
+      
+
+      <button mat-mini-fab class="remove-task" color="warn" aria-label="delete" (click)="removeTask()">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <button mat-mini-fab class="upload-image" color="primary"
+        aria-label="upload-image" (click)="fileInput.click()">
+        <mat-icon>image</mat-icon>
+        <input hidden (change)="editImageUrl($event)" #fileInput type="file" id="file"
+          accept="image/gif,image/jpeg,image/jpg,image/png">
+      </button>
+
+      <button mat-mini-fab class="edit-task" color="primary" aria-label="edit" (click)="setTaskInEditMode()">
+        <mat-icon>edit</mat-icon>
+      </button>
+
     </div>
+
     <!-- only open this during editting mode -->
     <ng-container *ngIf="isEditingProps">
         <input class="edit"
@@ -12,7 +38,12 @@
          [value]="editingText"
          (keyup)="editText($event)"
          (keyup.enter)="editTask()"/>
+
+         <button mat-mini-fab class="editting-mode" color="primary" aria-label="edit" (click)="editTask()">
+            <mat-icon>done</mat-icon>
+          </button>    
+
     </ng-container>
 
-</li>
-
+    <mat-divider></mat-divider>
+  </li>

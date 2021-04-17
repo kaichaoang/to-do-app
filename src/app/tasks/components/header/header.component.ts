@@ -11,12 +11,13 @@ import * as TaskActions from '../../actions/tasks.actions';
     
 })
 
+//Component for the header, used for input when adding a new task
 export class HeaderComponent {
-
     @Input() newTaskDescription: string
 
     constructor(private store: Store<TasksState>) {}
 
+    //add a new task with default isEditing, isCompleted and image_url
     addTask(): void {
         if (this.newTaskDescription != '') {
             const task: TaskInterface = {
@@ -27,6 +28,7 @@ export class HeaderComponent {
               image_url: ''
             };
             this.store.dispatch(TaskActions.addTask({task: task}));
+            //a way to reset task description
             this.newTaskDescription = '';
           }
     }

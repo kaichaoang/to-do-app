@@ -6,13 +6,24 @@ import { MainComponent } from './components/main/main.component';
 import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TasksService } from './components/services/tasks.service';
+import { TasksStorageService } from './components/services/tasks-storage.service';
 import { StoreModule } from '@ngrx/store';
 import { TaskReducer } from './reducers/tasks.reducer';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 
+const MaterialComponents = [
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatCheckboxModule
+];
 
+  
 const routes: Routes = [
     {
         path: '',
@@ -30,8 +41,9 @@ const routes: Routes = [
         StoreModule.forRoot({
             tasks: TaskReducer,
           }),
+        MaterialComponents
     ],
-    providers: [TasksService],
+    providers: [TasksStorageService],
 
 })
 export class TaskModule{}
