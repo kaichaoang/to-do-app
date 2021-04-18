@@ -23,26 +23,18 @@ const MaterialComponents = [
     MatCheckboxModule
 ];
 
-  
-const routes: Routes = [
-    {
-        path: '',
-        component: TasksComponent,
-    }
-];
-
 @NgModule({
     //each new component need to be added here
     declarations: [TasksComponent, HeaderComponent, MainComponent, TaskComponent, FooterComponent],
     imports:[
         CommonModule,
-        RouterModule.forChild(routes),
         FormsModule,
         StoreModule.forRoot({
             tasks: TaskReducer,
           }),
         MaterialComponents
     ],
+    exports: [TasksComponent, HeaderComponent, MainComponent, TaskComponent, FooterComponent],
     providers: [TasksStorageService],
 
 })
