@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {Component, NgModule} from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Component, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { TaskComponent } from './components/task/task.component';
@@ -13,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 const MaterialComponents = [
@@ -36,6 +35,7 @@ const MaterialComponents = [
     ],
     exports: [TasksComponent, HeaderComponent, MainComponent, TaskComponent, FooterComponent],
     providers: [TasksStorageService],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })
 export class TaskModule{}

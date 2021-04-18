@@ -1,18 +1,14 @@
 <li class="task" [ngClass]="{ editing: isEditingProps }">
     <div class="view">
-      <input
-        class="toggle"
-        type="checkbox"
-        [checked]="taskProps.isCompleted"
-        (change)="toggleCompletion()"
-      />
+
+      <mat-checkbox class="toggle" [checked]="taskProps.isCompleted" (change)="toggleCompletion()">
+      </mat-checkbox>
 
       <label>
         <img *ngIf="!(taskProps.image_url == '')" class="task-image" src={{taskProps.image_url}} alt="No image"/>
         <td [ngClass]="taskProps.isCompleted ? 'strikethrough': 'null' ">{{ taskProps.text }}</td>
       </label>
 
-      
 
       <button mat-mini-fab class="remove-task" color="warn" aria-label="delete" (click)="removeTask()">
         <mat-icon>delete</mat-icon>
