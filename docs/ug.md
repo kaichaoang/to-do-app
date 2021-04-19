@@ -44,7 +44,7 @@ Type in the input box, and hit enter or click the button at the end of the input
 ### Editing a task
 To edit a task, hover over the task you want to edit and click on the **pencil** button. This will open up an edit mode textbox and save by hitting enter or the **done** button.
 
-**Warning**: Editting a task is a destructive operation and there is no undo-ing action.
+:warning: Editting a task is a destructive operation and there is no undo-ing action.
 
 
 **Before edit**:
@@ -93,7 +93,7 @@ To delete a single task, hover over the task to be deleted and click on the bin 
 
 To delete all tasks at once, go to the bottom of the list of tasks and click on the **Clear All** button.
 
-**Warning**: Deleting tasks is a destructive operation and there is no undo-ing action.
+:warning: Deleting tasks is a destructive operation and there is no undo-ing action.
 
 
 **Before single delete**:
