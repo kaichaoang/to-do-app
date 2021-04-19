@@ -1,10 +1,17 @@
 <header class="header">
     <h1 class="mat-display-3">to do!</h1>
+
+    <form (ngSubmit)="addTask()" >
     <input
         class="new-task"
         placeholder="What needs to be done?"
         autoFocus
         [(ngModel)]="this.newTaskDescription"
         (keyup.enter)="addTask()"
-    />
+        name="new-task"
+    >
+    <button mat-mini-fab color="primary" type="submit">
+        <mat-icon>send</mat-icon>
+    </button>   
+    </form>
 </header>

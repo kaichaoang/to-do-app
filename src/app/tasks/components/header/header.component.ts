@@ -19,7 +19,7 @@ export class HeaderComponent {
 
     //add a new task with default isEditing, isCompleted and image_url
     addTask(): void {
-        if (this.newTaskDescription != '') {
+        if (this.newTaskDescription != '' && this.newTaskDescription != undefined) {
             const task: TaskInterface = {
               id: uuid(),
               text: this.newTaskDescription,
